@@ -43,54 +43,28 @@ function changeColor(){
 
     let message = $(this).siblings('.description').val();
     let timeSlot = $(this).parent().attr('id');
-    localStorage.setItem(message, timeSlot);
+    localStorage.setItem(timeSlot, message);
 
-  })
-
-function showMessage(){
-
-  $('.time-block').each(function(){
-
-    let message = $(this).siblings('.description').val();
-    let timeSlot = $(this).parent().attr('id');
-    localStorage.getItem(message, timeSlot);
-    if(message){
-      $('this').siblings('.description').text(value);
-    }
-  
-
-  })
-
-} 
-showMessage();
+  });
 
 
 
 
+//Show input value
 
-$('#hour-9 .description').val(localStorage.getItem('#hour-9'))
-
-
-
-
-
-
-})
-
-// $(selector).each(function() {
-//   var key = $(this).data('key');
-//   var value = localStorage.getItem(key);
-//   // Do something with the key and value
-// });
+$('#hour-9 .description').val(localStorage.getItem('hour-9'));
+$('#hour-10 .description').val(localStorage.getItem('hour-10'));
+$('#hour-11 .description').val(localStorage.getItem('hour-11'));
+$('#hour-12 .description').val(localStorage.getItem('hour-12'));
+$('#hour-13 .description').val(localStorage.getItem('hour-13'));
+$('#hour-14 .description').val(localStorage.getItem('hour-14'));
+$('#hour-15 .description').val(localStorage.getItem('hour-15'));
+$('#hour-16 .description').val(localStorage.getItem('hour-16'));
+$('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
 
-// $(document).ready(function() {
-//   var key = 'exampleKey';
-//   var value = localStorage.getItem(key);
-//   if (value) {
-//     $('#elementId').text(value);
-//   }
-// });
 
-// Where #elementId is the id of the HTML element you want to update with the data from local storage. The localStorage.getItem(key) method retrieves the value stored in local storage for the given key. The if (value) check makes sure that a value is retrieved before updating the element. The $(document).ready(function()) method ensures that the code is executed after the page has finished loading.
+});
+
+
 

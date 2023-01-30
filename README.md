@@ -13,15 +13,14 @@ N/A
 
 UPDATE
 
-Copy and past this URL: https://nmargolis00.github.io/quiz-site/
+Copy and past this URL: https://nmargolis00.github.io/Day-Planner/
 
 ## Image
 
-UPDATE
 
-![Website Screen Shots](./Entry%20Page.png)
-![Website Screen Shots](./images/Questions.png)
-![Website Screen Shots](./images/Final%20Page.png)
+
+![Website Screen Shots](./images/Day%20Planner%20Pic.png)
+
 
 
 
