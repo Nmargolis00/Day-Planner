@@ -1,7 +1,10 @@
+$(document).ready(function(){
+
 
 // Declare Variables:
 
-let currentHour = dayjs().format('H')
+let currentHour = dayjs().hour();
+//console.log(currentHour)
 let saveEl = $('.saveBtn');
 
 
@@ -11,13 +14,70 @@ let date = dayjs().format('dddd MMMM, M');
 $('#currentDay').text(date)
 
 
-//Save input tasks
+//Function to Change Color based on the hour of the day
 
-function saveInput (){
-    
-    let task = $(".description").val();
+function changeColor(){
+
+ $('.time-block').each(function(){
+  let hourBlock = parseInt($(this).attr('id').split('-')[1])
+  //$this means to grab everything inside of the timeblock. It is grabbing everything that the class affects
+  if(hourBlock < currentHour){
+    $(this).addClass('past');
+  }
+  if(hourBlock === currentHour){
+    $(this).addClass('present');
+  }
+  if(hourBlock > currentHour){
+    $(this).addClass('future');
+  }
+
+ })
+
 
 }
+  changeColor();
+
+
+
+  saveEl.on("click", function(){
+
+    let message = $(this).siblings('.description').val();
+    let timeSlot = $(this).parent().attr('id');
+    localStorage.setItem(message, timeSlot);
+
+  })
+
+function showMessage(){
+
+  $('.time-block').each(function(){
+
+    let message = $(this).siblings('.description').val();
+    let timeSlot = $(this).parent().attr('id');
+    localStorage.getItem(message, timeSlot);
+    if(message){
+      $('this').siblings('.description').text(value);
+    }
+  
+
+  })
+
+} 
+showMessage();
+
+
+// function test(){
+
+
+// $('#hour-9 .description').val(localStorage.getItem('#hour-9'))
+
+// }
+
+
+
+
+})
+
+
 
 
 
@@ -88,4 +148,4 @@ function saveInput (){
   //localStorage that shit
 
   // Event Listeners
-  saveEl.on("click", FIGUREOUTTHEFUNCTIONTOPUTHERE)
+  // saveEl.on("click", saveInput);
